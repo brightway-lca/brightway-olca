@@ -1,5 +1,5 @@
 """
-    Setup file for brightway2-olca.
+    Setup file for brightway-olca.
     Use setup.cfg to configure your project.
 
     This file was generated with PyScaffold 4.0.2.

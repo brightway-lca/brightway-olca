@@ -2,4 +2,4 @@
 Contributors
 ============
 
-* vstarlinger <valentin@starlinger.net>
+* Valentin Starlinger <valentin@starlinger.net>
