@@ -1,9 +1,9 @@
 ===============
-brightway2-olca
+brightway-olca
 ===============
 
 
-A small library that connects brightway2 to the openLCA IPC Server.
+A small library that connects brightway to the openLCA IPC Server.
 
 Installation
 ============
