@@ -30,10 +30,14 @@ This method returns a list of exchanges by type that can be used for integration
 Example usage:
 
     from bw_olca import olca_client
+    
     from bw_olca.exchange_types import ExchangeType
 
+
     client = olca_cilent.OLCAClient()
+    
     types_list = [ExchangeType.PROCESS]
+    
     results = client.get_olca_database_by_type(types_list, verbose=True)
 
 
