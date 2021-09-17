@@ -8,9 +8,9 @@ A small library that connects brightway2 to the openLCA IPC Server.
 Installation
 ============
 
-Download this library from github and then install it using
+Install this library from github using
 
-    pip install .
+    pip install git+https://github.com/brightway-lca/brightway-olca.git
 
 Setup
 =====
