@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import requests
+from dateutil import parser
 
 from bw_olca.exchange_types import ExchangeType
 
@@ -45,15 +46,13 @@ class OLCAClient(object):
                 # Before adding results, make sure that the last changed date is in
                 # python datetime format.
                 if "lastChange" in res.keys():
-                    if type(res["lastChange"]) == str:
-                        res["lastChange"] = datetime.strptime(
-                            res["lastChange"], "%Y-%m-%dT%H:%M:%S.%f%z"
-                        )
+                    if isinstance(res["lastChange"], str):
+                        res["lastChange"] = parser.parse(res["lastChange"])
+                    elif not isinstance(res["lastChange"], datetime):
+                        res["lastChange"] = parser.parse("1970-1-1T00:00:00.0+00:00")
                 else:
                     # If no lastChange is recorded, use a dummy value instead
-                    res["lastChange"] = datetime.strptime(
-                        "1970-1-1T00:00:00.0+00:00", "%Y-%m-%dT%H:%M:%S.%f%z"
-                    )
+                    res["lastChange"] = parser.parse("1970-1-1T00:00:00.0+00:00")
 
                 tmp_results.append(res)
 
